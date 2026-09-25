@@ -46,5 +46,8 @@ public class Cow : IEquatable<Cow>, IComparable<Cow>
         return string.Compare(Age, other.Age, StringComparison.Ordinal);
     }
     
-    
+    public override string ToString()
+    {
+        return $"{Name}, {Colour}, {Age}";
+    }
 }
