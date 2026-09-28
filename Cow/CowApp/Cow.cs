@@ -4,9 +4,9 @@ public class Cow : IEquatable<Cow>, IComparable<Cow>
 {
     public string Name { get; set; }
     public string Colour { get; set; }
-    public string Age { get; set; }
+    public int Age { get; set; }
 
-    public Cow(string name, string colour, string age)
+    public Cow(string name, string colour, int age)
     {
         Name = name;
         Colour = colour;
@@ -34,7 +34,6 @@ public class Cow : IEquatable<Cow>, IComparable<Cow>
         return HashCode.Combine(Name, Colour, Age);
     }
 
-
     public int CompareTo(Cow? other)
     {
         if (ReferenceEquals(this, other)) return 0;
@@ -43,8 +42,9 @@ public class Cow : IEquatable<Cow>, IComparable<Cow>
         if (nameComparison != 0) return nameComparison;
         var colourComparison = string.Compare(Colour, other.Colour, StringComparison.Ordinal);
         if (colourComparison != 0) return colourComparison;
-        return string.Compare(Age, other.Age, StringComparison.Ordinal);
+        return Age.CompareTo(other.Age);
     }
+    
     
     public override string ToString()
     {
