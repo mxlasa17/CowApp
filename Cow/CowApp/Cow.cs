@@ -48,6 +48,6 @@ public class Cow : IEquatable<Cow>, IComparable<Cow>
     
     public override string ToString()
     {
-        return $"{Name}, {Colour}, {Age}";
+        return $"Name: {Name},Colour: {Colour},Age: {Age},Second Letter: {Name[1]},Coolness: {Age * Colour.Length}";
     }
 }
