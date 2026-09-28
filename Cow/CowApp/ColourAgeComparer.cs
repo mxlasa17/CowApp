@@ -10,6 +10,6 @@ public class ColourAgeComparer : IComparer<Cow>
             return result;
         }
 
-        return x.Age.CompareTo(y.Age);
+        return x.Name.CompareTo(y.Name);
     }
 }
